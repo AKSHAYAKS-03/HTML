@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title> </head>
+  <body>
+       
+    <style> 
+       .header {
+      background-color: black; /* Background color for the header */
+      color: white; /* Text color */
+      padding: 15px; /* Padding to give some space around the text */
+      display: flex; /* Use flexbox for layout */
+      justify-content: space-between; /* Distribute items evenly along the main axis */
+      margin-top: 0;/* Remove margin at the top */
+    }
+    body {
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      text-align: center;
+       
+    }
+  
+    .left-text {
+      /* Yo*/
+      margin-top: 10px;
+      font-size: 20px;
+
+    }
+
+    .right-text {
+        color:gray;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-right: 200px; /* Align text to the right */
+      /* You can add styles for the right text here */
+    }
+    .search{
+ 
+        justify-content: center;
+        margin-top: 30px;
+
+  border: 5px;
+  font-size: 17px;
+  border-color:black;
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        height: 100vh; /* Adjust to your desired height */
+        margin-top: 40px;
+        
+    }
+     .box_inside{
+        height:265px;
+        width:242px;
+        display: flex;
+	align-items: flex-end;
+     justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: bottom; /* Align items vertically */
+margin: 2px;  border: 2px solid black;
+
+     }
+     .box_inside img{
+         width: 120px;
+         height: 150px;
+         position: absolute;
+         top: 25%;
+         padding:60px;
+            
+     }
+    .bottom-color {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2000px; /* Height of the colored area */
+  background-image: linear-gradient(to top,rgb(169,169,169),rgb(255,255,255)); /* Gradient colors */
+}
+</style>
+    <div class="header">
+        <div class="left-text"><b>Perfumy</b></div>
+        <div class="right-text">Home | Products | About | Contact |</div>
+    </div>
+
+    <div class="search">
+        <input style="width:76%;height:35px" type="text" placeholder="Search">
+    </div>
+    
+    <div class="box">
+        <div class="box_inside">
+            <img  src="sent.jpg" alt="can't display"class="img"><p>Fogg Wood Extrene,Eau De Parfum , Long-lasting Perfume,100ml</p>
+        </div>
+        <div class="box_inside">
+           <img  src="gun.jpg" alt="can't display" class="img"> <p> Fogg Wood Extreme,Eau De Parfum,Long-lasting Perfume,100ml</p>
+        </div>
+        <div class="box_inside">
+            <img  src="fogg.jpg" alt="can't display" class="img"><p>Designer Club-Be Spoke by Perfume Lounge Men's PerfumePremium Long Lasting Perfume</p>
+        </div>   
+    </div>
+  <center><h1 style="position: absolute;top:500px;right: 600px;">About Us</h1></center> 
+        
+    <div class="bottom-color"></div>
+  </body>
+    
+    
+</html>
