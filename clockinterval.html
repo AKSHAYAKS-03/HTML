@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+
+<script>
+const Clock = {
+  // Function to start the clock
+  start: function() {
+    // Print the time every second
+    const now = new Date();
+    const hours = this.formatTimeUnit(now.getHours());
+    const minutes = this.formatTimeUnit(now.getMinutes());
+    let seconds = this.formatTimeUnit(now.getSeconds());    
+    // Update the seconds every second
+    let sec = 1;
+    const intervalId = setInterval(() => {
+              sec++;
+
+      seconds = this.formatTimeUnit(seconds);
+      console.log("<br>" + hours + ":" + minutes + ":" + seconds);
+      seconds++;
+
+      if (sec > 5) {
+        clearInterval(intervalId); // Stop the interval after 5 seconds
+      }
+    }, 1000);
+  }, 
+
+  formatTimeUnit: function(unit) {
+    return unit < 10 ? '0' + unit : unit;
+  },
+};
+
+Clock.start();
+
+</script>
+
+</body>
+</html>

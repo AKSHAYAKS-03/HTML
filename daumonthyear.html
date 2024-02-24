@@ -1,0 +1,27 @@
+<!--Write a JavaScript Program to get the current data.
+Expected Output
+mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy-->
+
+
+<html>
+    <head>
+        
+    </head>
+<body>
+
+<p id="demo"></p>
+<script>
+    var nowdate = new Date();
+    
+      function formatTimeUnit(unit) {
+    return unit < 10 ? '0' + unit : unit;
+  }
+    
+    document.getElementById("demo").innerHTML = formatTimeUnit(nowdate.getMonth() +1) + "-" + formatTimeUnit(nowdate.getDay()) + "-" + nowdate.getFullYear()+","+
+formatTimeUnit(nowdate.getMonth() +1) + "/" + formatTimeUnit(nowdate.getDay()) + "/" + nowdate.getFullYear();
+    
+    
+</script>
+
+</body>
+</html>

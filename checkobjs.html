@@ -1,0 +1,51 @@
+<html>
+<body>
+<p id="demo"></p>
+​
+<script>
+​
+    const obj1 = {
+        name:"ford",
+        price:3000,
+        car:"sdg"
+​
+    };
+    const obj2 = {
+        name:"ford",
+        price:3000,
+    };
+    
+   function compare(obj1,obj2){
+     const keys1 =Object.keys(obj1);
+     const keys2 = Object.keys(obj2);
+​
+      if(keys1.length!== keys2.length){
+      return false;
+      }
+​
+      for(let i =0;i<keys1.length;i++){
+      if(!keys2.includes(keys1[i])){
+      return false;
+      }
+      }
+      
+      for(let i =0;i<keys2.length;i++){
+      if(!keys1.includes(keys2[i])){
+      return false;
+      }
+      }
+      
+      
+      return true;
+      }
+  
+  if (compare(obj1, obj2)) {
+        document.getElementById("demo").innerHTML = "Objects have the same properties";
+    } else {
+        document.getElementById("demo").innerHTML = "Objects do not have the same properties";
+    }
+</script>
+​
+</body>
+</html>
+​
