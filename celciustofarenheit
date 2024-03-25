@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+Create a web application that allows the user to enter a temperature in Celsius and
+convert it to Fahrenheit
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <style>
+            #formid{
+                text-align: center;
+                padding:50px;
+            }
+        </style>
+        <div id="formid">
+            <form action="NewServlet" method="post">
+                <label for="input">Enter the Celsius</label>
+                <input type="text" name="celcius"><br><br>
+                <input type="submit" value="Convert"><br><br>
+                <p id="ans"></p>
+               
+            </form>
+        </div>
+    </body>
+</html>
+
+
+          
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = {"/NewServlet"})
+public class NewServlet extends HttpServlet {
+
+ 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            double cel= Double.parseDouble(request.getParameter("celcius"));//will return value
+            double res = (cel*9/5)+32 ;
+            out.println("Farenheit is "+ res);
+            out.close();
+           }
+}
