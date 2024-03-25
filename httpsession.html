@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+Session Tracking
+Create an HTML form that asks the user for their name. Create a servlet that will receive
+this information and store it in a session. The servlet should then redirect the user to a
+page that displays their name. When the user visits the same page again, the servlet should
+display their name from the session
+-->
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <style>
+            #formid{
+                text-align: center;
+                padding:50px;
+            }
+        </style>
+        <div id="formid">
+            <form action="NewServlet2" method="post">
+                <label for="input">Enter your name: </label>
+                <input type="text" name="uname"><br><br>
+                <input type="submit" value="Clickme! "><br><br>
+                <p id="ans"></p>
+               
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet(urlPatterns = {"/NewServlet2"})
+public class NewServlet2 extends HttpServlet {
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+           
+            String n=request.getParameter("uname");
+            out.print("Welcome "+n);
+            HttpSession session=request.getSession();
+            session.setAttribute("uname",n);
+           
+            out.print("<a href='NewServlet3'> \nClickme !</a>");
+            out.close();
+
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet NewServlet2</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet NewServlet2 at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+
+
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class NewServlet3 extends HttpServlet {
+
+ 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+           
+            HttpSession session=request.getSession(false);
+            String n=(String)session.getAttribute("uname");
+            out.print("Hello "+n);
+            out.close();
+        }
+    }
+
+
+   
