@@ -1,0 +1,69 @@
+
+Akshaya Ks <akshayasenthilkumar12@gmail.com>
+19:02 (7 minutes ago)
+to Suriya
+
+<!DOCTYPE html>
+<!--
+Create a web application that displays a list of famous people. Allow the user to click on
+a person to view their biography.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <style>
+            #formid{
+                align-content: center;
+                padding :50px;
+            }
+        </style>
+     <div id="formid">
+           
+                <ul>
+                    <li><a href="NewServlet1?sundar=sundar_pichai">SUNDAR PICHAI</a></li><br>
+                    <li><a href="NewServlet1?satya=satya_nadella">SATYA NADELLA</a></li><br>
+                    <li><a href="NewServlet1?aravind=aravind_krishna">ARAVIND KRISHNA</a></li><br>
+                </ul>
+        </div>
+    </body>
+</html>
+
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = {"/NewServlet1"})
+public class NewServlet1 extends HttpServlet {
+
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            String sundar = request.getParameter("sundar");
+            out.println("Biogrphy of: "+ sundar.replace("_"," ")+"\n");
+            out.println("<p>Pichai Sundararajan, better known as Sundar Pichai, is an Indian-born American business executive. He is the chief executive officer of Alphabet Inc. and its subsidiary Google. Pichai began his career as a materials engineer.</p>");
+           
+            String satya = request.getParameter("satya");
+            out.println("Biogrphy of: "+ satya.replace("_"," ")+"\n");
+            out.println("<p>satya, better known as Sundar Pichai, is an Indian-born American business executive. He is the chief executive officer of Alphabet Inc. and its subsidiary Google. Pichai began his career as a materials engineer.</p>");
+           
+            String aravind = request.getParameter("aravind");
+            out.println("Biogrphy of: "+ aravind.replace("_"," ")+"\n");
+            out.println("<p>aravind, better known as Sundar Pichai, is an Indian-born American business executive. He is the chief executive officer of Alphabet Inc. and its subsidiary Google. Pichai began his career as a materials engineer.</p>");
+           
+            out.close();
+           
+        }}
