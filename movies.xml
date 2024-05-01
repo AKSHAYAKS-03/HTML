@@ -1,0 +1,26 @@
+<movie>
+<movie>
+<code>001</code>
+<name> The Shawshank Redemption</name>
+<description>Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.</description>
+<year>1994</year>
+</movie>
+<movie>
+<code>002</code>
+<name>The Godfather</name>
+<description>The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.</description>
+<year>1972</year>
+</movie>
+<movie>
+<code>003</code>
+<name> The Dark Knight</name>
+<description>When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</description>
+<year>2008</year>
+</movie>
+<movie>
+<code>004</code>
+<name>The Godfather Part II</name>
+<description> The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.</description>
+<year>1974</year>
+</movie>
+</movie>
