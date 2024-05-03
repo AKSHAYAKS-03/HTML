@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<?xml-stylesheet type="text/xsl" href="newstylesheet.xsl"?>
+
+<books>
+    <book>
+        <title>
+            Alchemist
+        </title>
+        <author>
+            Paulo coelho
+        </author>
+        <genre>
+           Adventure fiction
+        </genre>
+        <price>
+            600
+        </price>
+    </book>
+    <book>
+        <title>
+            Ikigai
+        </title>
+        <author>
+            Hector Garcia
+        </author>
+        <genre>
+            Self-help book
+        </genre>
+        <price>
+            800
+        </price>
+    </book>
+    <book>
+        <title>
+            SPY
+        </title>
+        <author>
+            Danielle Steel
+        </author>
+        <genre>
+            Mystery
+        </genre>
+        <price>
+            10
+        </price>
+    </book>
+    
+</books>
