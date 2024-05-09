@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run XSLT Transformation",
+            "type": "shell",
+            "command": "xsltproc",
+            "args": [
+                "newstylesheet.xsl",
+                "input.xml",
+                "-o",
+                "output.html"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        }
+    ]
+}
